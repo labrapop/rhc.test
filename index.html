@@ -1,60 +1,126 @@
 <!DOCTYPE html>
 <html>
-    <body style="background-color:white">
-        <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Rising Humanities Club</title>
-        <link rel="stylesheet"href="index.css">
-        </head>
-        <header class="header1">
-            <table class="table1"border="1"width="99%"cellspacing="0"cellpadding="5px">
-                <tr padding="0px">
-                    <th class="th1"><img src="logo.jpg"width="100px"height="100px"class="img1"></th>
-                    <th valign="middle"align="left"class="th1">RISING HUMANITIES CLUB</th>
-                    <th class="th1"><font color="#ffffff"class="th1">rising humanities club</font></th>
-                    <th class="th1"><font color="#ffffff"class="th1">rising humanities club</font></th>
-                    <th align="left"class="th1"><a href="index.html"><button class="button1">Home</button></a></th>
-                    <th align="left"class="th1"><a href="event.html"><button class="button1">Event Notice</button></a></th>
-                    <th align="left"class="th1"><a href="registration.html"><button class="button1">Registration</button></a></th>
-                    <th align="left"class="th1"><a href="social.html"><button class="button1">Our Social Links</button></a></th>
-                    <th align="left"class="th1"><a href="admin-info.html"><button class="button1">Admin Info</button></a></th>
-                </tr>
-            </table>
-            </header>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <center>
-            <img src="logo.jpg"width="300px"height="300px"class="img2"><br><br>
-            <font color="Black"size="14"><b>RISING HUMANITIES CLUB</b></font><br><br>
-            <font color="Black"size="4"><b>মানবিকের পথে স্বপ্ন দেখি</b></font><br>
-            <font color="Black"size="4"><b>জ্ঞান ও প্রচেষ্টায় দেশ গড়ি</b></font>
-            <br>
-            <br>
-            <br>
-        </center>
-            <h1><font color="green">Rising Humanities Club -এ কেন যোগ দিবেনঃ-</font></h1>
-            <ul type="circle"class="ul1">
-                <li class="li1">মানবিক বিভাগকে উপরে তোলা ও একটি উজ্জল ভবিষ্যৎ সুনিশ্চিত করা।</li>
-                <li class="li1">মানবিক মূল্যবোধে অনুশীলন ও কার্যক্রম।</li>
-                <li class="li1">ওয়ার্কশপ, বিতর্ক ও নেটওয়ার্কিং সুযোগ।</li>
-                <li class="li1">প্রজেক্ট, ভলান্টিয়ার কাজে অংশগ্রহণ।</li>
-            </ul>
-        </center>
-        <center>
-            <br>
-            <br>
-            <br>
-            <br>
-                    <footer>
-            <p>© 2025 Rising Humanities Club • Developed for club activities.
-Built with ♥ for Humanities.</p>
-        </footer>
-        </center>
-    </body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rising Humanities Club</title>
+    <link rel="stylesheet" href="index.css">
 
+    <style>
+      /* hamburger menu icon hidden by default */
+      .menu-icon {
+        display: none;
+        font-size: 28px;
+        cursor: pointer;
+        padding: 10px;
+        position: absolute;
+        right: 20px;
+        top: 30px;
+      }
+
+      /* dropdown nav for mobile */
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 90px;
+        right: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 10px;
+        z-index: 10;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 8px 12px;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+      }
+
+      .nav-links a:hover {
+        background: #f2f2f2;
+        border-radius: 5px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      /* hide nav items on mobile */
+      @media (max-width: 768px) {
+        .table1 th:nth-child(n+5) {
+          display: none;
+        }
+        .menu-icon {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+
+  <body style="background-color:white">
+    <header class="header1" style="position: relative;">
+      <table class="table1" border="1" width="99%" cellspacing="0" cellpadding="5px">
+        <tr padding="0px">
+          <th class="th1"><img src="logo.jpg" width="100px" height="100px" class="img1"></th>
+          <th valign="middle" align="left" class="th1">RISING HUMANITIES CLUB</th>
+          <th class="th1"><font color="#ffffff" class="th1">rising humanities club</font></th>
+          <th class="th1"><font color="#ffffff" class="th1">rising humanities club</font></th>
+          <th align="left" class="th1"><a href="index.html"><button class="button1">Home</button></a></th>
+          <th align="left" class="th1"><a href="event.html"><button class="button1">Event Notice</button></a></th>
+          <th align="left" class="th1"><a href="registration.html"><button class="button1">Registration</button></a></th>
+          <th align="left" class="th1"><a href="social.html"><button class="button1">Our Social Links</button></a></th>
+          <th align="left" class="th1"><a href="admin-info.html"><button class="button1">Admin Info</button></a></th>
+        </tr>
+      </table>
+
+      <!-- 3-line hamburger icon -->
+      <span class="menu-icon" onclick="toggleMenu()">☰</span>
+
+      <!-- dropdown menu (for mobile) -->
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="event.html">Event Notice</a>
+        <a href="registration.html">Registration</a>
+        <a href="social.html">Our Social Links</a>
+        <a href="admin-info.html">Admin Info</a>
+      </div>
+    </header>
+
+    <br><br><br><br><br><br>
+
+    <center>
+      <img src="logo.jpg" width="300px" height="300px" class="img2"><br><br>
+      <font color="Black" size="14"><b>RISING HUMANITIES CLUB</b></font><br><br>
+      <font color="Black" size="4"><b>মানবিকের পথে স্বপ্ন দেখি</b></font><br>
+      <font color="Black" size="4"><b>জ্ঞান ও প্রচেষ্টায় দেশ গড়ি</b></font>
+      <br><br><br>
+    </center>
+
+    <h1><font color="green">Rising Humanities Club -এ কেন যোগ দিবেনঃ-</font></h1>
+    <ul type="circle" class="ul1">
+      <li class="li1">মানবিক বিভাগকে উপরে তোলা ও একটি উজ্জল ভবিষ্যৎ সুনিশ্চিত করা।</li>
+      <li class="li1">মানবিক মূল্যবোধে অনুশীলন ও কার্যক্রম।</li>
+      <li class="li1">ওয়ার্কশপ, বিতর্ক ও নেটওয়ার্কিং সুযোগ।</li>
+      <li class="li1">প্রজেক্ট, ভলান্টিয়ার কাজে অংশগ্রহণ।</li>
+    </ul>
+
+    <center>
+      <br><br><br><br>
+      <footer>
+        <p>© 2025 Rising Humanities Club • Developed for club activities.
+          Built with ♥ for Humanities.</p>
+      </footer>
+    </center>
+
+    <!-- script for menu toggle -->
+    <script>
+      function toggleMenu() {
+        document.getElementById("navLinks").classList.toggle("active");
+      }
+    </script>
+  </body>
 </html>
